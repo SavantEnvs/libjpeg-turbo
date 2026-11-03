@@ -1,0 +1,10 @@
+project: savantenvs/libjpeg-turbo
+target: libjpeg_turbo
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/libjpeg_turbo/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/bin/libjpeg_turbo_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/libjpeg_turbo/libjpeg_turbo.dict
+    timeout: 10
