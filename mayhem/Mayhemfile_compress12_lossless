@@ -1,0 +1,9 @@
+project: savantenvs/libjpeg-turbo
+target: compress12_lossless
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/compress12_lossless/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/bin/compress12_lossless_fuzzer
+    libfuzzer: true
+    timeout: 10

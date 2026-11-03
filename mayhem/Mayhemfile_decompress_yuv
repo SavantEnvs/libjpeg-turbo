@@ -1,0 +1,10 @@
+project: savantenvs/libjpeg-turbo
+target: decompress_yuv
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/decompress_yuv/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/bin/decompress_yuv_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/decompress_yuv/decompress_yuv.dict
+    timeout: 10

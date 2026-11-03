@@ -1,0 +1,10 @@
+project: savantenvs/libjpeg-turbo
+target: decompress_libjpeg
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/decompress_libjpeg/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/bin/decompress_libjpeg_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/decompress_libjpeg/decompress_libjpeg.dict
+    timeout: 10
